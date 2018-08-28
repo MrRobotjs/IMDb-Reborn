@@ -226,9 +226,9 @@ ul.main_nav .singleLine a#nbusername::before {
 }
 #consumer_user_nav div.sub_nav {
     right: 30px;
-    margin-top: 71px;
+    margin-top: 82px;
     position: fixed;
-    width: 12.48%;
+    width: 15.70%;
     background-color: #191919;
     border-radius: 2px;
     box-shadow: unset;
@@ -2429,7 +2429,49 @@ h5 {
 a:hover {
 	text-decoration: unset !important;
 }
+ul.main_nav li p.watchlist a {
+color: /*[[primary-color]]*/;
+}
+ul.main_nav li p.watchlist a:hover {
+color: /*[[primary-color-hover]]*/;
+}
 #nb20.supertab {
+    /* margin-top: -16px; */
     margin-bottom: 90px;
+}
+#navbar #nb_search #navbar-suggestionsearch {
+    background-color: #191919;
+    border: unset;
+    box-shadow: rgba(0,0,0,0.8) 0 4px 14px 0;
+}
+#navbar #nb_search #navbar-suggestionsearch .navbar-suggestionsearch__search-result {
+    border-bottom: unset;
+}
+#navbar #nb_search #navbar-suggestionsearch a.highlighted {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.navbar-suggestionsearch__search-result .video-modal.highlighted {
+    border-color: /*[[primary-color]]*/;
+}
+#navbar #nb_search #navbar-suggestionsearch a,
+.navbar-suggestionsearch__search-result .navbar-suggestionsearch__video-item--small .navbar-suggestionsearch__video-details {
+    color: /*[[primary-color]]*/;
+}
+#navbar #nb_search #navbar-suggestionsearch>a.moreResults {
+    border-radius: 2px !important;
+    background-color: /*[[primary-color]]*/;
+    margin-top: 12px;
+    color: #000;
+    display: -webkit-inline-box;
+    left: 14px;
+    position: relative;
+    top: -6px;
+    transition: .2s background-color linear;
+}
+#navbar #nb_search #navbar-suggestionsearch a .detail {
+    color: #fff;
+}
+#navbar #nb_search #navbar-suggestionsearch>a.moreResults:hover {
+    background-color: /*[[primary-color-hover]]*/;
 }
 }
