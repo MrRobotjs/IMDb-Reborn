@@ -2429,4 +2429,7 @@ h5 {
 a:hover {
 	text-decoration: unset !important;
 }
+#nb20.supertab {
+    margin-bottom: 90px;
+}
 }
