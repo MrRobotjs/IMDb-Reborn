@@ -12,9 +12,9 @@
 ==/UserStyle== */
 
 @-moz-document domain("imdb.com") {
-/*[[primary-color]] #F5C518*/
-/*[[primary-color-hover]] #BE9500*/
-/*[[light-primary]] #FFF857*/
+/*[[primary-color]] #f5c518*/
+/*[[primary-color-hover]] #be9500*/
+/*[[light-primary]] #fff857*/
 
 #root {
     width: 100%;
@@ -691,7 +691,7 @@ p.blurb {
 
 .wl-ribbon.standalone.not-inWL::before {
     content: "+";
-    color: #fff;
+    color: #000;
     background-color: /*[[primary-color]]*/;
     padding: 6px 9px;
     border-radius: 50%;
@@ -704,8 +704,8 @@ p.blurb {
 }
 .wl-ribbon.poster::before {
     content: "+";
-    color: #fff;
-    background-color: /*[[primary-color-hover]]*/;
+    color: #000;
+    background-color: /*[[primary-color]]*/;
     padding: 7px 10px;
     border-radius: 50%;
     font-size: 16px;
@@ -721,8 +721,8 @@ p.blurb {
 }
 .raven-watchlist-button .watchlist-button::before {
 	content: "+";
-    color: #fff;
-    background-color: /*[[primary-color-hover]]*/;
+    color: #000;
+    background-color: /*[[primary-color]]*/;
     padding: 10px 13px;
     border-radius: 50%;
     font-size: 19px;
@@ -2682,6 +2682,45 @@ color: /*[[primary-color-hover]]*/;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 6px 10px;
     border-radius: 2px !important;
+}
+.article .ab_widget #newsdesk.newsdesk h2.float-left {
+    margin-bottom: 0px;
+}
+.article .ab_widget #newsdesk.newsdesk h2.float-left ~ .newsTabs.float-right {
+    padding: 9px 14px;
+    left: 25px;
+    position: relative;
+}
+.article .ab_widget #newsdesk.newsdesk h2.float-left ~ .newsTabs.float-right a {
+    padding-bottom: 3px;
+}
+.no_inline_blurb .ninja_image_pack .ninja_left .ninja_image.widget_padding {
+    visibility: hidden;
+}
+.no_inline_blurb .ninja_image_pack .ninja_left .ninja_image {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    padding: 9px;
+}
+.ninja_image .widget_image .widget_caption.caption_below .primary a {
+    color: /*[[primary-color]]*/;
+}
+.rec_actions .rec_not_interested_btn .btn2,
+.rec_actions .rec_next_btn .btn2 {
+    background: /*[[primary-color]]*/;
+    border: unset;
+    transition: linear all .2s;
+}
+.rec_actions .rec_not_interested_btn .btn2:hover,
+.rec_actions .rec_next_btn .btn2:hover {
+    background: /*[[primary-color-hover]]*/;
+    border: unset;
+}
+.rec_actions .rec_not_interested_btn .btn2,
+.rec_actions .rec_next_btn .btn2 {
+    background: /*[[primary-color]]*/;
+    padding: 2px 3px;
+    margin-top: 1px;
 }
 select.lister-sort-by:focus {
     outline: unset;
