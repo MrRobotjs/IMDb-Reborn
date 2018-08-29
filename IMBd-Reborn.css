@@ -6,9 +6,9 @@
 @md5URL https://update.userstyles.org/163692.md5
 @originalMD5 1d76188e37a304fcb3179280f183488d
 @author [object Object]
-@advanced color primary-color "Primary color" #31f1fb
-@advanced color primary-color-hover "Primary Color Hover" #41deeb
-@advanced color light-primary "Light Primary" #8cebf2
+@advanced color primary-color "Primary color" #f5c518
+@advanced color primary-color-hover "Primary Color Hover" #be9500
+@advanced color light-primary "Light Primary" #fff857
 ==/UserStyle== */
 
 @-moz-document domain("imdb.com") {
@@ -527,10 +527,6 @@ div#findSubHeader span#findSubHeaderLabel {
     padding: 0px 10px 0px 0px;
     color: #fff;
 }
-.aux-content-widget-3 p {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 7px 3px;
-}
 .aux-content-widget-3 ul li a {
     background-color: rgba(255, 255, 255, 0.05);
     color: #fff;
@@ -551,13 +547,72 @@ div#findSubHeader span#findSubHeaderLabel {
     display: -webkit-inline-box;
     padding: 7px 14px;
 }
+.aux-content-widget-3 a {
+    color: #000;
+    background-color: /*[[primary-color]]*/;
+    padding: 4px 8px;
+    line-height: 29px;
+    transition: all linear .2s;
+    border-radius: 2px;
+}
+.aux-content-widget-3 strong {
+    padding: 3px 2px;
+    display: -webkit-inline-box;
+}
+ul.quicklinks li.subnav_selected {
+    background-color: unset;
+    box-shadow: unset;
+    border-radius: unset;
+}
+ul.quicklinks li.subnav_selected a, ul.quicklinks li.subnav_selected a:visited {
+    color: #ffffff;
+}
+.subnav h4 {
+    color: #000;
+    margin: 12px 0 5px;
+    background-color: /*[[primary-color]]*/;
+    padding: 5px 6px;
+    display: -webkit-inline-box;
+}
+.aux-content-widget-2.links.subnav hr {
+    visibility: hidden;
+    margin: 8px 0 0px;
+}
+.aux-content-widget-2.links.subnav .show_more {
+    background-color: /*[[primary-color]]*/;
+    color: #000;
+    display: -webkit-inline-box !important;
+    border-radius: 2px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+}
+.aux-content-widget-2.links.subnav .arrows.show {
+	display: none;
+}
+.subnav .nobr {
+    color: #ffffff;
+}
+a.subnav_heading {
+    color: #000;
+    background-color: /*[[primary-color]]*/;
+    padding: 5px 9px;
+    display: -webkit-inline-box;
+}
+.aux-content-widget-3 a:hover {
+    background-color: /*[[primary-color-hover]]*/;
+}
 .aux-content-widget-2 h3 ~ p a {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 2px;
-    padding: 6px 8px 8px 8px;
+    padding: 6px 8px 8px;
     line-height: 26px;
     margin-left: 10px;
+}
+#sidebar .aux-content-widget-3 {
+    margin-left: -55px;
+    padding: 0px 4px 4px;
 }
 .aux-content-widget-3 .findEnableAdultToggle form a {
     color: #000;
@@ -606,6 +661,24 @@ p.blurb {
 	border-bottom: unset;
     padding-bottom: 0px;
 }
+#sidebar .mini-article .ab_widget div#watchwidget_link_div.seemore {
+    padding: 7px 10px 7px 15px !important;
+    margin-left: -16px;
+    display: -webkit-inline-box;
+    position: relative;
+    margin-top: 2px;
+}
+#watchwidget_ribbon {
+    z-index: 1;
+}
+#sidebar .mini-article .ab_widget div#watchwidget_link_div.seemore {
+    padding: 7px 10px 7px 24px !important;
+    margin-left: -18px;
+    display: -webkit-inline-box;
+    position: relative;
+    margin-top: 2px;
+    background-color: #fff;
+}
 .wl-ribbon.standalone.not-inWL, 
 .wl-ribbon.poster,
 #raven_widget .raven-watchlist-button .watchlist-button {
@@ -613,12 +686,13 @@ p.blurb {
 }
 .wl-ribbon.standalone.not-inWL:hover::before,
 .wl-ribbon.poster:hover::before {
-	background-color: /*[[primary-color]]*/;
+	background-color: /*[[primary-color-hover]]*/;
 }
+
 .wl-ribbon.standalone.not-inWL::before {
     content: "+";
     color: #fff;
-    background-color: /*[[primary-color-hover]]*/;
+    background-color: /*[[primary-color]]*/;
     padding: 6px 9px;
     border-radius: 50%;
     font-size: 16px;
@@ -882,7 +956,8 @@ table.chart th:nth-child(3) {
 table.chart th {
 	color: #fff;
 }
-select.lister-sort-by {
+select.lister-sort-by,
+select.sort_name {
     background-color: rgba(255, 255, 255, 0.05);
     border: unset;
     padding: 7px 12px;
@@ -890,12 +965,30 @@ select.lister-sort-by {
     border-radius: 2px;
     transition: .2s background-color linear;
 }
-select.lister-sort-by:hover {
+select.lister-sort-by:hover,
+select.sort_name:hover {
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
-span.global-sprite.lister-sort-reverse:hover {
+span.global-sprite.lister-sort-reverse:hover,
+.sort button.sort_desc:hover {
 	background-color: rgba(0, 0, 0, 0.5);
+}
+.sort button.sort_desc:hover {
+	background-size: 21px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 17px;
+	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTAuNzIgNTEwLjcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTAuNzIgNTEwLjcyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4Ij4KPGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjExNS4yLDM4MC44IDEwNS4zODcsNDAyLjU2IDEwNS4zODcsMTA0LjMyIDExMy43MDcsMTI4LjQyNyAxMzcuMzg3LDE1Mi4zMiAxNjUuOTczLDEyNC44IDgzLjIsNDIuMDI3ICAgICAwLjIxMywxMjUuMDEzIDI4LjgsMTUyLjMyIDUyLjY5MywxMjguNjQgNjIuNzIsMTAyLjYxMyA2Mi43Miw0MDQuNDggNTIuOTA3LDM4Mi4yOTMgMjguOCwzNTguNCAwLDM4NS40OTMgODMuMiw0NjguNjkzICAgICAxNjUuNTQ3LDM4Ni4zNDcgMTM3LjM4NywzNTguNCAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iMzYyLjAyNyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0Mi42NjciIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjIxMi4wNTMiIHk9IjE0OC42OTMiIHdpZHRoPSIxNzAuNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iNjMuMzYiIHdpZHRoPSIyOTguNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iMjc2LjY5MyIgd2lkdGg9IjI3Ny4zMzMiIGhlaWdodD0iNDIuNjY3IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSI0MjUuMzg3IiB5PSIxNDguNjkzIiB3aWR0aD0iODUuMzMzIiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+}
+.sort button.sort_desc {
+	background-size: 21px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 17px;
+	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTAuNzIgNTEwLjcyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTAuNzIgNTEwLjcyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjI1NnB4IiBoZWlnaHQ9IjI1NnB4Ij4KPGc+Cgk8Zz4KCQk8cG9seWdvbiBwb2ludHM9IjExNS4yLDM4MC44IDEwNS4zODcsNDAyLjU2IDEwNS4zODcsMTA0LjMyIDExMy43MDcsMTI4LjQyNyAxMzcuMzg3LDE1Mi4zMiAxNjUuOTczLDEyNC44IDgzLjIsNDIuMDI3ICAgICAwLjIxMywxMjUuMDEzIDI4LjgsMTUyLjMyIDUyLjY5MywxMjguNjQgNjIuNzIsMTAyLjYxMyA2Mi43Miw0MDQuNDggNTIuOTA3LDM4Mi4yOTMgMjguOCwzNTguNCAwLDM4NS40OTMgODMuMiw0NjguNjkzICAgICAxNjUuNTQ3LDM4Ni4zNDcgMTM3LjM4NywzNTguNCAgICIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iMzYyLjAyNyIgd2lkdGg9IjE5MiIgaGVpZ2h0PSI0Mi42NjciIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxyZWN0IHg9IjIxMi4wNTMiIHk9IjE0OC42OTMiIHdpZHRoPSIxNzAuNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iNjMuMzYiIHdpZHRoPSIyOTguNjY3IiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHJlY3QgeD0iMjEyLjA1MyIgeT0iMjc2LjY5MyIgd2lkdGg9IjI3Ny4zMzMiIGhlaWdodD0iNDIuNjY3IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cmVjdCB4PSI0MjUuMzg3IiB5PSIxNDguNjkzIiB3aWR0aD0iODUuMzMzIiBoZWlnaHQ9IjQyLjY2NyIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
 }
 span.global-sprite.lister-sort-reverse {
 	background-size: 20px;
@@ -1292,11 +1385,14 @@ a.news-article__footer-detail-link {
     background-color: /*[[primary-color]]*/;
     padding: 6px 14px;
     margin-left: -11px;
-    top: -16px;
+    top: -17px;
     position: relative;
     border-radius: 0px;
     line-height: 38px;
     transition: .2s background-color linear;
+}
+#news-article-list .news-article__header h2 a:hover {
+	color: #000 !important;
 }
 #content-2-wide .main .minPosterWithPlotSummaryHeight ~ .article {
     background-color: transparent;
@@ -2123,8 +2219,11 @@ a#home_img {
     transition: 0s background-color linear;
 }
 .mini-article h3 {
-    background-color: /*[[primary-color]]*/;
+    background-color: /*[[primary-color]]*/ !important;
     padding: 9px 10px;
+}
+.mini-article.poll-widget-rhs h3 {
+    padding: 12px 7px 0px;
 }
 .mini-article li.news_item {
     background-color: rgba(255, 255, 255, 0.05);
@@ -2199,14 +2298,52 @@ a#home_img {
     background-color: /*[[primary-color]]*/;
     color: #000;
 }
-#pagecontent a:hover:not(.btn2):not(.btn) {
-	color: unset;
+.newsdesk .news-header .infobar .text-muted {
+	color: #fff;
+}
+.article .widget_header .oneline h3 {
+    background-color: /*[[primary-color]]*/;
+    color: #000;
+    padding: 9px 14px;
+}
+.newsdesk .summary-news {
+    margin-bottom: 22px;
+}
+.newsdesk .summary-news .news-header a {
+	color: /*[[primary-color]]*/;
+}
+.newsdesk .summary-news .news-header a:hover {
+	color: /*[[primary-color-hover]]*/;
+}
+.newsdesk .summary-news .news-header {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 #injected_navstrip_wrapper {
     display: none;
 }
 .mini-article .episode-container .title-row ~ p {
     padding: 9px 12px;
+    color: #fff;
+}
+.mini-article .episode-container .title-row~.ipl-rating-star,
+.ipl-rating-interactive__star-container span {
+    color: #fff;
+}
+.mini-article hr {
+    visibility: hidden;
+}
+.small-number {
+    color: /*[[primary-color]]*/;
+}
+.mini-article hr {
+    background: #333;
+    border-top: unset;
+    height: 6px;
 }
 .mini-article .episode-container .title-row ~ .ipl-rating-star {
     margin-left: 10px;
@@ -2229,12 +2366,18 @@ a#home_img {
 .heroic-overview .plot_summary_wrapper .plot_summary a:hover {
     background-color: /*[[primary-color-hover]]*/;
 }
+.mini-article ~ .aux-content-widget-2 {
+    margin-left: 0px;
+    width: calc(100% - 11px);
+    color: #fff;
+}
 .heroic-overview .plot_summary_wrapper .plot_summary .summary_text {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 2px;
     padding: 10px;
     margin-top: -11px;
     margin-bottom: 18px;
+    color: #fff;
 }
 .watchbar2 .watch-icon.physical {
     filter: hue-rotate(214deg) brightness(200%);
@@ -2311,9 +2454,39 @@ a#home_img {
     bottom: 14px;
     position: relative;
 }
-.widget_caption .primary a {
+#sectionName[value*=awards-central]~#pagecontent #sidebar .ab_widget .ab_ninja .blurb a {
     color: #000;
     background-color: /*[[primary-color]]*/;
+    padding: 8px 12px;
+    line-height: 39px;
+    border-radius: 2px;
+    transition: .2s linear background-color;
+}
+#sectionName[value*=awards-central]~#pagecontent #sidebar .ab_widget .ab_ninja .blurb a:hover {
+    background-color: /*[[primary-color-hover]]*/;
+}
+#sectionName[value*="awards-central"] ~ #pagecontent #sidebar .ab_widget .ab_ninja .blurb {
+	color: transparent;
+    background-color: transparent;
+    padding: unset;
+}
+.widget_image .image .widget_caption .primary a {
+    background-color: unset !important;
+}
+.shovelerButton {
+	transition: .2s all linear;
+}
+.widget_image .caption_overlay,
+.shovelerButton.hover {
+	background-color: /*[[primary-color]]*/ !important;
+}
+.widget_image .image .widget_caption .primary a,
+.widget_image .caption_overlay a:link {
+    color: #000;
+}
+.widget_caption .primary a {
+    color: #000;
+    background-color: /*[[primary-color]]*/ !important;
     border-radius: 2px;
     padding: 5px 5px 6px;
     display: -webkit-inline-box;
@@ -2467,6 +2640,51 @@ color: /*[[primary-color-hover]]*/;
     position: relative;
     top: -6px;
     transition: .2s background-color linear;
+}
+.seen-collection .article h3 ~ .lister .nav .controls {
+    margin-bottom: 10px;
+}
+.article .parent h3 {
+    margin-bottom: 13px !important;
+    display: -webkit-inline-box !important;
+}
+.search-results div.slate h2 a {
+	color: #fff;
+    transition: .2s color linear;
+}
+.search-results li:hover .slate h2 a,
+.search-results li .slate h2 a:hover {
+	color: /*[[primary-color]]*/ !important;
+    text-decoration: unset !important;
+}
+.search-results ol > li {
+	border-top: unset;
+    background-color: rgba(255,255,255,.05);
+    padding: 10px;
+    border-radius: 2px;
+	transition: .2s all linear;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.7);
+}
+.search-results ol > li:hover {
+	background-color: rgba(0,0,0,0.6);
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.7);
+}
+.article #video_gallery_content hr {
+    visibility: hidden;
+}
+.article .parent h3 a {
+    color: #000;
+    background-color: /*[[primary-color]]*/;
+    padding: 7px 13px;
+}
+.article .parent h3 .nobr {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 6px 10px;
+    border-radius: 2px !important;
+}
+select.lister-sort-by:focus {
+    outline: unset;
 }
 #navbar #nb_search #navbar-suggestionsearch a .detail {
     color: #fff;
