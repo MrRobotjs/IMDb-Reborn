@@ -12,9 +12,9 @@
 ==/UserStyle== */
 
 @-moz-document domain("imdb.com") {
-/*[[primary-color]] #f5c518*/
-/*[[primary-color-hover]] #be9500*/
-/*[[light-primary]] #fff857*/
+/*[[primary-color]] #F5C518*/
+/*[[primary-color-hover]] #BE9500*/
+/*[[light-primary]] #FFF857*/
 
 #root {
     width: 100%;
@@ -2470,21 +2470,21 @@ a#home_img {
     background-color: transparent;
     padding: unset;
 }
-.widget_image .image .widget_caption .primary a {
+#sectionName[value*="awards-central"] ~ #pagecontent .widget_image .image .widget_caption .primary a {
     background-color: unset !important;
 }
 .shovelerButton {
 	transition: .2s all linear;
 }
-.widget_image .caption_overlay,
+#sectionName[value*="awards-central"] ~ #pagecontent .widget_image .caption_overlay,
 .shovelerButton.hover {
 	background-color: /*[[primary-color]]*/ !important;
 }
-.widget_image .image .widget_caption .primary a,
-.widget_image .caption_overlay a:link {
+#sectionName[value*="awards-central"] ~ #pagecontent .widget_image .image .widget_caption .primary a,
+#sectionName[value*="awards-central"] ~ #pagecontent .widget_image .caption_overlay a:link {
     color: #000;
 }
-.widget_caption .primary a {
+#sectionName[value*="awards-central"] ~ #pagecontent .widget_caption .primary a {
     color: #000;
     background-color: /*[[primary-color]]*/ !important;
     border-radius: 2px;
