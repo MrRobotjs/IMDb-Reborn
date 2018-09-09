@@ -11,16 +11,15 @@
 @advanced color light-primary "Light Primary" #fff857
 ==/UserStyle== */
 
-@-moz-document domain("imdb.com") {
+@-moz-document domain("www.imdb.com") {
 /*
 Primary Color: #f5c518
-Hover Color: #be9500
+Accent Color: #be9500
 Text Color: #000/#FFF
 Dark/Light Mode: Dark/Light
 Dark Background Colors: #191919, #262626, #333333, #3F3F3F, #4C4C4C
-Light Background Colors: #FFFFFF, #F2F2F2, #E5E5E5, #D8D8D8, #CCCCCC	
+Light Background Colors: #FFFFFF, #F2F2F2, #E5E5E5, #D8D8D8, #CCCCCC
 */
-
 #root {
     width: 100%;
     background-color: #333 !important;
@@ -103,7 +102,7 @@ div.ab_hero {
 }
 .btn2.small:hover,
 .btn.primary:hover {
-	background: var(--primary-hover-color);
+	background: /*[[primary-hover-color]]*/;
 }
 .btn2.small[itemprop="trailer"] {
     color: /*[[primary-color]]*/;
@@ -116,7 +115,7 @@ div.ab_hero {
 }
 .btn2.small[title="Click to add to watchlist"]:hover,
 .btn2.small[itemprop="trailer"]:hover {
- 	color: var(--primary-hover-color);
+ 	color: /*[[primary-hover-color]]*/;
  }
 .see-more:not(.canwrap) a, 
 .seemore a {
@@ -129,7 +128,7 @@ div.ab_hero {
 }
 .seemore a:hover,
 .see-more a:hover {
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
 }
 .see-more {
@@ -218,7 +217,7 @@ div.ab_hero {
 }
 .see-all a:hover {
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
 }
 /* END Buttons */
 /* START In Theaters */
@@ -355,7 +354,7 @@ a.favorite_toggle.favorite_off:hover {
 .article.listo.st .location .header a:hover {
 	color: #000;
     text-decoration: unset;
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
     transition: .2s background-color linear, box-shadow .2s linear;
 }
@@ -426,7 +425,7 @@ ul.list_tabs li.linkright a:last-of-type {
     transition: .2s linear background-color, .2s linear box-shadow;
 }
 ul.list_tabs li.linkright a:hover:last-of-type {
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
 }
 .listo.st .detail .list_item {
@@ -635,7 +634,7 @@ h5.li_group:before {
 }
 .lister-item .lister-item-content.smart-popout .text-muted a:hover {
     background-color: transparent;
-    color: var(--primary-hover-color);
+    color: /*[[primary-hover-color]]*/;
 }
 .datepicker .text-muted.text-smaller.description {
     color: #fff;
@@ -781,7 +780,7 @@ h5.li_group:before {
 }
 .article a:hover {
     text-decoration: unset;
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
 }
 .rightcornerlink {
     border-left: unset;
@@ -928,7 +927,7 @@ h5.li_group:before {
 }
 #wrapper .lister-widget .lister-item-header>a:hover {
     color: #000;
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
 }
 .lister-widget .lister-item-details,
 .lister-widget .lister-item-credits,
@@ -1068,7 +1067,7 @@ button.lister-controls-expand:hover {
     transition: .2s linear background-color, .2s linear box-shadow;
 }
 #sidebar a:hover h2, #sidebar a:hover h3 {
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
     color: #000;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
 }
@@ -1183,7 +1182,7 @@ div.article.on-tv .airtime {
     transition: .2s linear background-color;
 }
 .aux-content-widget-3 .show_more:hover {
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
     text-decoration: unset;
 }
 .aux-content-widget-3 hr {
@@ -1565,7 +1564,7 @@ ul.main_nav li a.signin-other-options-text::before {
     position: relative;
 }
 ul.main_nav li a.signin-other-options-text:hover::before {
-	background-color: /*[[primary-color-hover]]*/;
+	background-color: /*[[primary-hover-color]]*/;
 }
 ul.main_nav li {
     padding: 0px 20px;
@@ -1610,7 +1609,7 @@ ul.main_nav li span.downArrow,
 }
 #nb_extra .desktop-sprite:hover {
     opacity: 1;
-    background-color: /*[[primary-color-hover]]*/;
+    background-color: /*[[primary-hover-color]]*/;
 }
 #nb_extra .desktop-sprite {
     transition: .2s background-color linear;
@@ -1814,7 +1813,7 @@ div.subNavListContainer a {
     color: #000;
 }
 .footer-row a.touchlink:hover {
-	background-color: /*[[primary-color-hover]]*/;
+	background-color: /*[[primary-hover-color]]*/;
     text-decoration: unset;
 }
 .footer-row a.touchlink::after {
@@ -2084,7 +2083,7 @@ a:link {
     padding: 0px;
 }
 .article.listo .lister .header.filmosearch ~ .lister-list .lister-item .lister-item-content .text-muted a:hover {
-    color: var(--primary-hover-color);
+    color: /*[[primary-hover-color]]*/;
     background-color: transparent;
     padding: 0px;
 }
@@ -2281,7 +2280,7 @@ div.article.nm div.header div.nav div.sort a:hover {
 .nm-title-overview-widget-layout td.overview-top h4 a:hover,
 .article.listo .list .list_item .list_item h4 a:hover {
     box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
-    background-color: var(--primary-hover-color);
+    background-color: /*[[primary-hover-color]]*/;
 }
 .article.listo .list .list_item .list_item h4 a {
 	top: -8px;
@@ -2531,7 +2530,7 @@ div.list_public, div.discussions_shown, div.byline {
     margin-top: 40px;
 }
 .twbs .default-dark .nav-imdb-tabs>li:hover>a>.key {
-	background-color: /*[[primary-color-hover]]*/ !important;
+	background-color: /*[[primary-hover-color]]*/ !important;
 }
 .navigation-widget .nav-buttons {
     height: 50px;
@@ -2574,7 +2573,7 @@ div.list_public, div.discussions_shown, div.byline {
 	color: /*[[primary-color]]*/;
 }
 .watchbar2 .showtime div.winner-option.watch-option:hover {
-	background-color: var(--primary-hover-color);
+	background-color: /*[[primary-hover-color]]*/;
     box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
 }
 .watchbar2 .showtime div.winner-option.watch-option a,
