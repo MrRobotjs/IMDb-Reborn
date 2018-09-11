@@ -84,6 +84,16 @@ div.ab_hero {
 }
 /* END Slideshow */
 /* START Buttons */
+button.btn.small {
+    background: /*[[primary-color]]*/;
+    border: unset;
+    padding: 4px 10px;
+    border-radius: 2px;
+    transition: background .2s linear;
+}
+button.btn.small:hover {
+    background: /*[[primary-hover-color]]*/;
+}
 .ab_widget .seemore::after {
 	display: none;
 }
@@ -127,9 +137,12 @@ div.ab_hero {
     transition: .2s linear background-color, .2s linear box-shadow;
 }
 .seemore a:hover,
-.see-more a:hover {
+.see-more:not(.canwrap) a:hover {
     background-color: /*[[primary-hover-color]]*/;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
+}
+.see-more a span.itemprop {
+	color: /*[[primary-color]]*/;
 }
 .see-more {
     border: unset;
@@ -167,6 +180,11 @@ div.ab_hero {
     width: 30px;
     height: 30px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.45);
+    transition: .2s linear background, .2s linear box-shadow;
+}
+.rec_actions .rec_not_interested_btn .btn2:hover { /* Dislike button */
+    background: #d32929;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
 }
 .rec_actions .rec_not_interested_btn {
     display: inline;
@@ -766,6 +784,14 @@ h5.li_group:before {
     background-color: #191919;
     border-radius: 2px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+    transition: .2s linear box-shadow;
+}
+#pagecontent.pagecontent #content-2-wide #main .article:hover {
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.4);
+}
+#pagecontent.pagecontent #content-2-wide #main .article .article,
+#pagecontent.pagecontent #content-2-wide #main .article:hover .article {
+    box-shadow: unset;
 }
 .article a h3 {
     color: #000;
@@ -778,9 +804,12 @@ h5.li_group:before {
 .article a:hover h3 {
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.45);
 }
-.article a:hover {
+.article > a:hover:not(.full-link) {
     text-decoration: unset;
     background-color: /*[[primary-hover-color]]*/;
+}
+.article > a:hover {
+    text-decoration: unset !important;
 }
 .rightcornerlink {
     border-left: unset;
@@ -1553,18 +1582,21 @@ ul.main_nav li a.signin-other-options-text {
 }
 ul.main_nav li a.signin-other-options-text::before {
     content: "Sign in";
-    font-size: 12px;
+    font-size: 20px;
     color: #000;
     text-decoration: none;
     background-color: /*[[primary-color]]*/;
-    padding: 8px 13px 9px;
-    border-radius: 2px;
+    padding: 13px 25px;
+    border-radius: 25px;
     transition: .2s background-color linear;
-    bottom: 21px;
-    position: relative;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
 }
 ul.main_nav li a.signin-other-options-text:hover::before {
 	background-color: /*[[primary-hover-color]]*/;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.55);
 }
 ul.main_nav li {
     padding: 0px 20px;
@@ -1643,6 +1675,7 @@ ul.main_nav .singleLine a#nbusername {
     bottom: 25px;
     right: 25px;
     box-shadow: 0px 2px 6px 1.5px rgba(0, 0, 0, 0.6);
+    transition: .2s linear box-shadow, .2s linear background-color;
 }
 ul.main_nav .singleLine a#nbusername::before {
     content: "";
@@ -1658,11 +1691,20 @@ ul.main_nav .singleLine a#nbusername::before {
     background-repeat: no-repeat;
     background-position: center;
     padding-left: 7px;
-    box-shadow: -4px 4px 9px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: -7px 4px 9px 0px rgba(0, 0, 0, 0.6);
+    transition: .2s linear box-shadow, .2s linear background-color;
+}
+ul.main_nav .singleLine a#nbusername:hover::before {
+    box-shadow: -7px 4px 9px 1px rgba(0, 0, 0, 0.6);
+    background-color: /*[[primary-hover-color]]*/;
+}
+ul.main_nav .singleLine a#nbusername:hover {
+	box-shadow: 0 2px 6px 2.5px rgba(0,0,0,.6)!important;
+    background-color: /*[[primary-hover-color]]*/;
 }
 #consumer_user_nav div.sub_nav {
-    right: 11px;
-    bottom: 72px;
+    right: 25px;
+    bottom: 68px;
     top: initial;
     margin-top: 82px;
     position: fixed;
@@ -1673,6 +1715,7 @@ ul.main_nav .singleLine a#nbusername::before {
     box-shadow: 0 2px 25px rgba(0,0,0,.4)!important;
     animation: .1s linear opacity,.3s cubic-bezier(0,0,0,1) context-open-new;
     transform-origin: 0 0!important;
+    transition: .2s linear box-shadow;
  }
  .heroic-overview .primary_ribbon .wlb_dropdown_list {
  	animation: .1s linear opacity,.3s cubic-bezier(0,0,0,1) context-open-new;
@@ -1720,6 +1763,225 @@ div.subNavListContainer a {
     margin-top: 15px;
 }
 /* END Image Widget */
+/* START User Profile */
+.user-profile .user-profile .header {
+    padding: 30px;
+    text-align: center;
+}
+.pagecontent .user-profile .user-profile .header h1 {
+    background-color: #333;
+    padding: 7px 10px;
+    border-radius: 2px;
+    position: relative;
+    top: 19px;
+}
+.pagecontent .user-profile .user-profile .header #avatar-frame {
+    border: 2px solid /*[[primary-color]]*/;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px /*[[primary-color]]*/;
+    float: unset;
+    margin: 0 auto;
+    width: 100px;
+}
+.pagecontent .user-profile .header .timestamp {
+    position: absolute;
+    top: 98px;
+    left: 20px;
+    background-color: /*[[primary-color]]*/;
+    color: #000;
+    padding: 8px 14px;
+    border-radius: 2px 0px 0px;
+}
+.user-profile .badges {
+    margin-top: 55px;
+}
+.user-profile .badges .badge-frame .badge-icon {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: -2px;
+}
+.user-profile .badges .badge-frame {
+    background-color: #333;
+    border-radius: 2px;
+    margin-left: 32px;
+    padding: 0px 0px 0px 8px;
+}
+#edit-avatar-popover .header {
+    border-radius: 2px 2px 0px 0px;
+    background: #191919;
+    border-bottom: 2px solid /*[[primary-color]]*/;
+    color: #fff;
+}
+#edit-avatar-popover {
+    background: #333 !important;
+    height: auto;
+    padding-bottom: 10px;
+    width: 500px !important;
+    left: 31%;
+    box-shadow: 0px 0px 0px 900px rgba(0,0,0,0.9) !important;
+    border-radius: 2px !important;
+    animation: .1s linear opacity,.3s cubic-bezier(0,0,0,1) context-open-new;
+    transform-origin: 0 0!important;
+    transition: .2s linear box-shadow;
+}
+#uncropped-avatar-frame>* {
+    margin-left: 40px;
+}
+#edit-avatar-popover #avatar-upload-terms {
+    margin-top: 25px;
+}
+#edit-avatar-popover button#avatar-upload {
+    margin-top: 10px;
+}
+#edit-avatar-popover  .avatar-upload {
+    margin-top: 30px;
+}
+#edit-avatar-popover h4 {
+    margin-top: 24px;
+    font-size: 18px;
+}
+#edit-avatar-popover button#pick-avatar {
+    background: /*[[primary-color]]*/;
+    border: unset;
+    border-radius: 2px;
+    font-size: 17px;
+    margin: 0 auto;
+    transition: .2s linear background;
+}
+#edit-avatar-popover button#pick-avatar:hover {
+	background: /*[[primary-hover-color]]*/;
+}
+#edit-avatar-popover .close-popover {
+    margin-top: 20px;
+    color: /*[[primary-color]]*/;
+    margin-left: 10px;
+}
+#edit-avatar-popover #upload-avatar-widget {
+    margin: 0 auto;
+    width: 186px;
+    text-align: center;
+}
+.user-profile img#avatar {
+    border-radius: 50%;
+}
+.user-profile .header>a {
+    position: absolute;
+    left: 38px;
+    color: /*[[primary-color]]*/;
+    top: 137px;
+}
+.user-profile .subNavItem {
+	margin-top: 10px;
+}
+.user-profile #avatar-overlay a {
+	background-color:  /*[[primary-color]]*/;
+    height: 30px;
+    width: 30px;
+    font-size: 0px;
+    display: -webkit-box;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,<svg width='459' height='459' xmlns='http://www.w3.org/2000/svg'><g><title>background</title><rect fill='none' id='canvas_background' height='402' width='582' y='-1' x='-1'/></g><g><title>Layer 1</title><g id='svg_1'><g id='create'><path fill='#000000' id='svg_2' d='m0,362.1l0,96.9l96.9,0l280.5,-283.05l-96.9,-96.9l-280.5,283.05zm451.35,-260.1c10.2,-10.2 10.2,-25.5 0,-35.7l-58.65,-58.651c-10.2,-10.2 -25.5,-10.2 -35.7,0l-45.9,45.9l96.9,96.9l43.35,-48.449z'/></g></g><g id='svg_3'/><g id='svg_4'/><g id='svg_5'/><g id='svg_6'/><g id='svg_7'/><g id='svg_8'/><g id='svg_9'/><g id='svg_10'/><g id='svg_11'/><g id='svg_12'/><g id='svg_13'/><g id='svg_14'/><g id='svg_15'/><g id='svg_16'/><g id='svg_17'/></g></svg>");
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    transition: .2s linear box-shadow, .2s linear background-color;
+    margin-top: 1px;
+    margin-left: -10px;
+}
+.user-profile #sidebar .aux-content-widget-2 .subNavItem a[href="https://secure.imdb.com/register-imdb/personalize"] {
+    background-color:  /*[[primary-color]]*/;
+    height: 50px;
+    width: 50px;
+    font-size: 0px;
+    display: -webkit-box;
+    border-radius: 50%;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-image: url("data:image/svg+xml;utf8,<svg width='459' height='459' xmlns='http://www.w3.org/2000/svg'><g><title>background</title><rect fill='none' id='canvas_background' height='402' width='582' y='-1' x='-1'/></g><g><title>Layer 1</title><g id='svg_1'><g id='create'><path fill='#000000' id='svg_2' d='m0,362.1l0,96.9l96.9,0l280.5,-283.05l-96.9,-96.9l-280.5,283.05zm451.35,-260.1c10.2,-10.2 10.2,-25.5 0,-35.7l-58.65,-58.651c-10.2,-10.2 -25.5,-10.2 -35.7,0l-45.9,45.9l96.9,96.9l43.35,-48.449z'/></g></g><g id='svg_3'/><g id='svg_4'/><g id='svg_5'/><g id='svg_6'/><g id='svg_7'/><g id='svg_8'/><g id='svg_9'/><g id='svg_10'/><g id='svg_11'/><g id='svg_12'/><g id='svg_13'/><g id='svg_14'/><g id='svg_15'/><g id='svg_16'/><g id='svg_17'/></g></svg>");
+    background-size: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    transition: .2s linear box-shadow, .2s linear background-color;
+    padding: unset;
+}
+.user-profile .subNavItem a {
+    background-color: #333;
+    border-radius: 2px;
+    padding: 3px 8px;
+    transition: .2s linear background
+    margin-top: 10px;
+}
+.user-profile .subNavItem a:hover {
+    background-color: /*[[primary-color]]*/;
+    color: #000;
+}
+.user-profile #sidebar .aux-content-widget-2 .subNavItem a[href="https://secure.imdb.com/register-imdb/personalize"]:hover,
+.user-profile #avatar-overlay a:hover {
+    background-color: /*[[primary-hover-color]]*/;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
+}
+.user-profile .user-profile {
+    background-color: #191919;
+    padding: 16px 6px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+    transition: .2s box-shadow linear;
+}
+.user-profile .user-profile:hover {
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
+}
+#profile-checklist .item {
+    border: unset;
+    background-color: #f51818;
+    padding: 4px 0px 1px 3px;
+    border-radius: 2px;
+    line-height: 21px;
+    background-position: 4px 6px;
+    margin-top: 7px;
+}
+#profile-checklist .item.ok {
+    background-color: #333;
+    background-position: 5px 7px;
+}
+#profile-checklist .item a {
+    color: #000;
+}
+.badge-frame .name {
+    color: #ffffff;
+}
+.user-profile .see-more {
+    border-top: unset;
+    color: transparent;
+}
+/* END User Profile */
+/* START User Settings */
+.pagecontent #main .new ul.two-columns {
+    columns: 1;
+    margin-top: 20px;
+    list-style-type: none;
+}
+.pagecontent #main .new ul.two-columns li {
+    margin-bottom: 18px;
+}
+.pagecontent #main .new ul.two-columns li a {
+    color: #fff;
+    background-color: #333;
+    padding: 4px 14px;
+    border-radius: 2px;
+    transition: .2s linear background-color;
+}
+.pagecontent #main .new ul.two-columns li a:hover {
+    color: #000;
+    background-color: /*[[primary-color]]*/;
+    text-decoration: unset;
+}
+.article ul.two-columns ~ a:hover {
+    background-color: transparent;
+}
+/* END User Settings */
 /* START Trailers */
 .trailer-content .nav-tabs {
     border-bottom: 4px solid rgba(0, 0, 0, 0.35);
@@ -1998,6 +2260,28 @@ a#clear_rvi:hover {
 .heroic-overview .titleReviewBar .divider {
     border-left: solid 1px #333333;
 }
+.heroic-overview #quicklinksBar .titleOverviewShareButton {
+	background-image: url("data:image/svg+xml;utf8,<svg width='481.6' height='481.6' xmlns='http://www.w3.org/2000/svg'><g><title>background</title><rect fill='none' id='canvas_background' height='402' width='582' y='-1' x='-1'/></g><g><title>Layer 1</title><g id='svg_1'><path fill='#ffffff' id='svg_2' d='m381.6,309.4c-27.7,0 -52.4,13.2 -68.2,33.6l-132.3,-73.9c3.1,-8.9 4.8,-18.5 4.8,-28.4c0,-10 -1.7,-19.5 -4.9,-28.5l132.2,-73.8c15.7,20.5 40.5,33.8 68.3,33.8c47.4,0 86.1,-38.6 86.1,-86.1s-38.6,-86.1 -86.1,-86.1s-86.1,38.6 -86.1,86.1c0,10 1.7,19.6 4.9,28.5l-132.1,73.8c-15.7,-20.6 -40.5,-33.8 -68.3,-33.8c-47.4,0 -86.1,38.6 -86.1,86.1s38.7,86.1 86.2,86.1c27.8,0 52.6,-13.3 68.4,-33.9l132.2,73.9c-3.2,9 -5,18.7 -5,28.7c0,47.4 38.6,86.1 86.1,86.1s86.1,-38.6 86.1,-86.1s-38.7,-86.1 -86.2,-86.1zm0,-282.3c32.6,0 59.1,26.5 59.1,59.1s-26.5,59.1 -59.1,59.1s-59.1,-26.5 -59.1,-59.1s26.6,-59.1 59.1,-59.1zm-281.6,272.7c-32.6,0 -59.1,-26.5 -59.1,-59.1s26.5,-59.1 59.1,-59.1s59.1,26.5 59.1,59.1s-26.6,59.1 -59.1,59.1zm281.6,154.7c-32.6,0 -59.1,-26.5 -59.1,-59.1c0,-32.6 26.5,-59.1 59.1,-59.1s59.1,26.5 59.1,59.1c0,32.6 -26.5,59.1 -59.1,59.1z'/></g><g id='svg_3'/><g id='svg_4'/><g id='svg_5'/><g id='svg_6'/><g id='svg_7'/><g id='svg_8'/><g id='svg_9'/><g id='svg_10'/><g id='svg_11'/><g id='svg_12'/><g id='svg_13'/><g id='svg_14'/><g id='svg_15'/><g id='svg_16'/><g id='svg_17'/></g></svg>");
+    background-size: 31px;
+    background-repeat: no-repeat;
+    background-position: 7px 10px;
+    margin-top: 9px;
+    font-size: 0;
+    height: 50px;
+    width: 50px;
+    padding: unset;
+    margin-right: 16px;
+    transition: .2s linear background-color;
+    border-radius: 50%;
+}
+.heroic-overview #quicklinksBar .titleOverviewShareButton:hover {
+	background-image: url("data:image/svg+xml;utf8,<svg width='481.6' height='481.6' xmlns='http://www.w3.org/2000/svg'><g><title>background</title><rect fill='none' id='canvas_background' height='402' width='582' y='-1' x='-1'/></g><g><title>Layer 1</title><g id='svg_1'><path fill='#000000' id='svg_2' d='m381.6,309.4c-27.7,0 -52.4,13.2 -68.2,33.6l-132.3,-73.9c3.1,-8.9 4.8,-18.5 4.8,-28.4c0,-10 -1.7,-19.5 -4.9,-28.5l132.2,-73.8c15.7,20.5 40.5,33.8 68.3,33.8c47.4,0 86.1,-38.6 86.1,-86.1s-38.6,-86.1 -86.1,-86.1s-86.1,38.6 -86.1,86.1c0,10 1.7,19.6 4.9,28.5l-132.1,73.8c-15.7,-20.6 -40.5,-33.8 -68.3,-33.8c-47.4,0 -86.1,38.6 -86.1,86.1s38.7,86.1 86.2,86.1c27.8,0 52.6,-13.3 68.4,-33.9l132.2,73.9c-3.2,9 -5,18.7 -5,28.7c0,47.4 38.6,86.1 86.1,86.1s86.1,-38.6 86.1,-86.1s-38.7,-86.1 -86.2,-86.1zm0,-282.3c32.6,0 59.1,26.5 59.1,59.1s-26.5,59.1 -59.1,59.1s-59.1,-26.5 -59.1,-59.1s26.6,-59.1 59.1,-59.1zm-281.6,272.7c-32.6,0 -59.1,-26.5 -59.1,-59.1s26.5,-59.1 59.1,-59.1s59.1,26.5 59.1,59.1s-26.6,59.1 -59.1,59.1zm281.6,154.7c-32.6,0 -59.1,-26.5 -59.1,-59.1c0,-32.6 26.5,-59.1 59.1,-59.1s59.1,26.5 59.1,59.1c0,32.6 -26.5,59.1 -59.1,59.1z'/></g><g id='svg_3'/><g id='svg_4'/><g id='svg_5'/><g id='svg_6'/><g id='svg_7'/><g id='svg_8'/><g id='svg_9'/><g id='svg_10'/><g id='svg_11'/><g id='svg_12'/><g id='svg_13'/><g id='svg_14'/><g id='svg_15'/><g id='svg_16'/><g id='svg_17'/></g></svg>");
+	background-color: /*[[primary-color]]*/;
+}
+.heroic-overview #quicklinksBar #quicklinksMainSection .quicklink[href^="https://pro.imdb.com"] {
+    background-color: #02acd3;
+    color: #fff;
+}
 .heroic-overview #quicklinksBar #quicklinksMainSection .quicklink {
     background-color: /*[[primary-color]]*/;
     color: #000;
@@ -2060,6 +2344,9 @@ h1, h2, h3, h4, h5 {
 }
 a:link {
 	color: /*[[primary-color]]*/;
+}
+.see-all a:link {
+	color: #000;
 }
 .lister-item.mode-advanced {
     margin-top: 10px;
@@ -2266,7 +2553,138 @@ div.article.nm div.header div.nav div.sort a:hover {
 #content-2-wide #main .article.listo.nm > h1.header {
     line-height: 29px;
 }
+/* START Share Popup */
+#share-popover {
+    background-color: #191919;
+    border-radius: 2px;
+    padding: 8px 0;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,.4)!important;
+    animation: .1s linear opacity,.3s cubic-bezier(0,0,0,1) context-open-new;
+    transform-origin: 0 0!important;
+    border: unset;
+    transition: .2s linear box-shadow;
+}
+#share-popover .option {
+    background: transparent;
+    border: unset;
+    border-radius: 0px;
+    padding: 1px 3px;
+    transition: background-color .2s linear;
+}
+#share-popover .option:hover {
+    background: #313131;
+}
+#share-popover a {
+	color: rgba(255,255,255,0.8);
+}
+#share-popover a:hover {
+	color: #fff;
+}
+#share-popover h4 {
+    color: /*[[primary-color]]*/ !important;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#share-popover a.close-popover {
+    float: right;
+    font-weight: bold;
+    color: rgba(0,0,0,0.8);
+    padding: 7px 12px;
+    text-decoration: none;
+    margin-right: 0px;
+    margin-top: -8px;
+    background-color: /*[[primary-color]]*/;
+    border-radius: 0px 2px 0px 50px;
+    transition: .2s linear color, .2s linear background-color;
+}
+#share-popover a.close-popover:hover {
+    color: #000;
+    background-color: /*[[primary-hover-color]]*/;
+}
+/* END Share Popup */
 /* START Movie Titles */
+.heroic-overview .title_block .title_bar_wrapper a[href^="/genre"] {
+    color: #fff;
+    background-color: #333;
+    padding: 3px 7px;
+    border-radius: 25px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    transition: .2s linear box-shadow, .2s linear color;
+}
+.heroic-overview .title_block .title_bar_wrapper a[href^="/genre"]:hover {
+    color: /*[[primary-color]]*/;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
+    text-decoration: unset;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper {
+    margin-top: 10px;
+    margin-bottom: 17px;
+}
+.star-rating .star-rating-stars {
+    border-left: 1px solid #191919;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-button .star-rating-star.no-rating {
+    left: 10px;
+    position: relative;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-text {
+    position: relative;
+    left: 5px;
+    top: 10px;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating {
+    background-color: #333333;
+    border-radius: 2px;
+    border: unset;
+    margin-right: 0px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    transition: .2s linear box-shadow;
+    animation: .1s linear opacity,.3s cubic-bezier(0,0,0,1) context-open-new;
+    transform-origin: 0 0!important;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating:hover {
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-button button {
+    background-color: #333;
+    height: 80px;
+    width: 65px;
+    border: unset;
+    margin-top: -5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+    transition: .2s linear box-shadow;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-button button:hover {
+    background-color: #333333;
+    border-left: unset;
+    box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.4);
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-button .star-rating-star.rating {
+    background-position: -8px -158px;
+    position: absolute;
+    top: 21px;
+    left: 12px;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-button button .star-rating-value {
+    font: normal 15px/24px Arial;
+    display: block;
+    padding-top: 1px;
+    color: #000;
+    background-color: /*[[primary-color]]*/;
+    top: -23px;
+    position: relative;
+    text-align: center;
+    width: 64px;
+}
+.heroic-overview .title_block .title_bar_wrapper .ratings_wrapper .star-rating-widget .star-rating-subtext {
+    display: block;
+    color: white;
+    font-size: 10px;
+    line-height: 10px;
+    position: relative;
+    top: 17px;
+    text-align: center;
+}
 .nm-title-overview-widget-layout td.overview-top h4 a,
 .article.listo .list .list_item .list_item h4 a {
     background-color: /*[[primary-color]]*/;
@@ -2623,5 +3041,37 @@ hr {
     color: #e8e5e5;
     top: 5px;
     position: relative;
+}
+.heroWidget .widget_nested .widget_image .widget_caption {
+    transform: translate(0px,225px);
+    transition: 2s linear translate;
+}
+.heroWidget .widget_nested .widget_image .image:hover .widget_caption {
+    transform: translate(0px,0px);
+}
+
+.article .newsdesk .newsTabs {
+    background-color: #333;
+    border-radius: 2px;
+    padding: 8px;
+}
+.article .newsdesk .newsTabs a {
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    transition: .2s linear color, .2s linear border-bottom;
+}
+.article .newsdesk .newsTabs a.active,
+.article .newsdesk .newsTabs a:hover  {
+    color: /*[[primary-color]]*/;
+    border-bottom: 2px solid /*[[primary-color]]*/;
+    text-decoration: unset;
+}
+.article .newsdesk .newsTabs .ghost {
+	visibility: hidden;
+}
+a:visited {
+    color: /*[[primary-hover-color]]*/;
+    text-decoration: none;
 }
 }
